@@ -10,12 +10,23 @@ public class Tile extends Image{
 	int _Y;
 	
 	//Size
-	int _SizeX;
+	int _sizeX;
 	int _sizeY;
 
-	public Tile(java.lang.String str) throws SlickException{
+	public Tile(java.lang.String str, int w, int h) throws SlickException{
 		super(str);
+		_sizeX = w;
+		_sizeY = h;
 		
+	}
+	
+	public void setLocation(int x, int y){
+		_X = x;
+		_Y = y;
+	}
+	
+	public void setX(int x){
+		_X = x;
 	}
 	
 }
