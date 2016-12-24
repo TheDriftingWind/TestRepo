@@ -1,3 +1,7 @@
+/*
+ * Game created by Charles Zhu
+ * Using: Slick2D(Open source)
+ */
 package javagame;
 
 import org.newdawn.slick.*;

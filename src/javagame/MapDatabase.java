@@ -9,10 +9,10 @@ public class MapDatabase {
 	Tile[][] Map1;
 	
 	//Tiles
-	Tile b;
-	Tile w;
-	Tile r;
-	Tile g;
+	Tile b; //Black
+	Tile w;	//White
+	Tile r;	//Red
+	Tile g;	//Gray|Ground
 	
 	public MapDatabase() throws SlickException{
 		
