@@ -2,26 +2,30 @@ package javagame;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 
 public class Tile extends Image{
 	
 	//Name
-	String _name;
+	private String _name;
 	//Location
-	int _X;
-	int _Y;
+	private int _X;
+	private int _Y;
 	//Size
-	int _sizeX;
-	int _sizeY;
+	private int _width;
+	private int _height;
+	//hitBox
+	private Rectangle _hitBox;
 
 	public Tile(java.lang.String str, String name, int w, int h) throws SlickException{
 		super(str);
-		_sizeX = w;
-		_sizeY = h;
+		_width = w;
+		_height = h;
+		_hitBox = new Rectangle(_X, _Y,w,h);
 		
 	}
 	
-	public String getName(){
+	public String getTileName(){
 		return _name;
 	}
 	
@@ -44,5 +48,17 @@ public class Tile extends Image{
 	
 	public int getY(){
 		return _Y;
+	}
+	
+	public int getTileWidth(){
+		return _width;
+	}
+	
+	public int getTileHeight(){
+		return _height;
+	}
+	
+	public Rectangle getHitBox(){
+		return _hitBox;
 	}
 }

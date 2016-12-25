@@ -6,13 +6,13 @@ public class MapDatabase {
 
 	//store the map as a 2 dimensional array
 	//render the whole thing at once
-	Tile[][] Map1;
+	protected Tile[][] _Map1;
 	
 	//Tiles
-	Tile b; //Black
-	Tile w;	//White
-	Tile r;	//Red
-	Tile g;	//Gray|Ground
+	private Tile b; //Black
+	private Tile w;	//White
+	private Tile r;	//Red
+	private Tile g;	//Gray|Ground
 	
 	public MapDatabase() throws SlickException{
 		
@@ -31,6 +31,12 @@ public class MapDatabase {
 				{g,g,g,g,g,g}
 		};
 		
+		_Map1 = Map1;
 		
+		
+	}
+	
+	public Tile[][] getMap1(){
+		return _Map1;
 	}
 }
