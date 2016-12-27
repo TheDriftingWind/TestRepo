@@ -6,13 +6,15 @@ public class MapDatabase {
 
 	//store the map as a 2 dimensional array
 	//render the whole thing at once
-	protected Tile[][] _Map1;
+	Tile[][] _Map1;
+	int _Map1H; //map height | always 6(0-5)
+	int _Map1W; //map width
 	
 	//Tiles
-	private Tile b; //Black
-	private Tile w;	//White
-	private Tile r;	//Red
-	private Tile g;	//Gray|Ground
+	Tile b; //Black
+	Tile w;	//White
+	Tile r;	//Red
+	Tile g;	//Gray|Ground
 	
 	public MapDatabase() throws SlickException{
 		
@@ -22,21 +24,32 @@ public class MapDatabase {
 		r = new Tile("res/objects/RedBox.png","red", 100, 100);
 		g = new Tile("res/objects/GrayBox.png","gray", 100, 100);
 
-		Tile[][] Map1 = {
-				{b,b,b,b,b,b},
-				{b,b,b,b,b,b},
-				{b,b,b,b,b,b},
-				{b,b,b,b,b,b},
-				{b,b,b,b,b,b},
-				{g,g,g,g,g,g}
+		/*
+		 * MOVE TO IT'S OWN CLASS (MAP.JAVA)
+		 */
+		_Map1H = 6;
+		_Map1W = 3;
+		_Map1 = new Tile[][]{
+				{b,r,r}, //0
+				{w,r,w}, //1
+				{b,r,w}, //2
+				{w,r,b}, //3
+				{b,r,w}, //4
+				{g,g,g}  //5
 		};
-		
-		_Map1 = Map1;
 		
 		
 	}
 	
 	public Tile[][] getMap1(){
 		return _Map1;
+	}
+	
+	public int getMap1H(){
+		return _Map1H;
+	}
+	
+	public int getMap1W(){
+		return _Map1W;
 	}
 }

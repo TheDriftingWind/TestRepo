@@ -21,6 +21,8 @@ public class Tile extends Image{
 		super(str);
 		_width = w;
 		_height = h;
+		_X = 0;
+		_Y = 0;
 		_hitBox = new Rectangle(_X, _Y,w,h);
 		
 	}
